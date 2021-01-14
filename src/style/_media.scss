@@ -1,0 +1,67 @@
+@media screen and (max-width: 996px) {
+  .input-group {
+    justify-content: center;
+  }
+  .header-form__input {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .logo--small {
+    margin-right: 0;
+  }
+  .logo--big {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .menu {
+    display: none;
+    &__item {
+      text-align: center;
+      &.menu__item--hidden {
+        height: 0;
+        margin-bottom: 0!important;
+        & .menu__link {
+          height: 0;
+        }
+      }
+    }
+  }
+
+
+  .header {
+    margin-top: 60px;
+  }
+  .header__menu {
+    background: $darkGrey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 20px 10px;
+    width: 100%;
+  }
+  .rectangle-small {
+    display: none;
+  }
+  .header__motivation, .header__questions {
+    width: 100%;
+  }
+
+  .header-form {
+    max-width: 100%;
+  }
+  .experience-inner {
+    justify-content: center;
+  }
+  .experience-column {
+    width: 100%;
+  }
+
+
+}
