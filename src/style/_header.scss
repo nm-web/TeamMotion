@@ -8,13 +8,14 @@
   background-size: contain;
   position: relative;
   margin:0 auto;
-  padding-bottom: 85px;
+  padding-bottom: 150px;
 
   &__menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 41px;
+    //overflow: hidden;
 
   }
 
@@ -188,7 +189,7 @@
       content:url("/static/images/svg/click-pointer.svg");
       top:0;
       left: -56px;
-
+      transition: content 2s ease;
     }
     & .question--red {
       font-size: 36px;
@@ -198,6 +199,7 @@
     & p {
       display: inline;
       border-bottom: 3px $pinkish dashed;
+      transition: border-bottom 2s ease;
     }
 
     &.active {
@@ -222,8 +224,6 @@
   line-height: 1.2;
   font-weight: 300;
   counter-reset: li;
-  //height: 0;
-  //visibility: hidden;
   padding: 24px 0;
   transition: transform 3s ease-in-out;
 }
@@ -231,44 +231,73 @@
 .tabs-content__item.active{
   height: 100%;
   visibility: visible;
-  //display: block;
-}
-
-.kostil {
-  height: 100%;
-  visibility: visible;
 }
 
 .before-hide1 {
-  //height: 100%;
   transform: translateY(0);
   opacity: 1;
 }
-.after-hide1 {
-  //height: 0;
-  transform: translateY(-100%);
-  opacity: 0;
+
+.tabs-item1 {
+  z-index: 3;
 }
 
-.hide1 {
-  animation: fadeUpBack 1s ease-out forwards;
+.tabs-item2.active {
+  margin-top: 20px;
 }
-
 .before-hide2 {
-  //height: 100%;
   transform: translateY(0);
   opacity: 1;
 }
-.after-hide2 {
-  //height: 0;
-  transform: translateY(100%);
+.fix-tabs-up {
+  transform: translateY(-100%);
+}
+
+.fix-tab-visible{
   opacity: 0;
 }
 
+.tab1-wrapper {
+  position: relative;
+}
 
+.tabs2 {
+  position: absolute;
+  opacity: 1;
+}
 
+.anim-switch-tabs-up {
+  animation: switchTabUp 3s ease-out forwards;
+}
 
+.anim-switch-tabs-down {
+  animation: switchTabDown 3s ease-out forwards;
+}
 
+.anim-fade-in {
+  animation: fadeIn 2s ease-out forwards;
+  //animation-delay: 1s;
+}
+.anim-fade-out {
+  animation: fadeOut 2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.tab2-content {
+  opacity: 0;
+  z-index: 1;
+}
+
+.tab2-visible {
+  opacity: 1;
+}
+
+.block2 {
+  height: 100vh;
+  position: relative;
+  z-index: 3;
+  background: whitesmoke;
+}
 .tab-1.active-1{
   animation: fadeUpBack 1s ease-out forwards;
 }

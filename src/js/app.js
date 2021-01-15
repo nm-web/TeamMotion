@@ -1,50 +1,85 @@
 window.onload = function () {
 
+
   const tabs = function () {
-    let tabItem1 = document.querySelector('.tabs-item1');
-    let tabContent1 = document.querySelector('.tabs-content1');
-    let tabItem2 = document.querySelector('.tabs-item2');
-    let tabContent2 = document.querySelector('.tabs-content2');
-    let tab2 = document.querySelector('.tabs2');
-    tabItem2.addEventListener('click', selectTabItem2);
-    tabItem1.addEventListener('click', selectTabItem1);
+    // let tabItem1 = document.querySelector('.tabs-item1');
+    let tabItem1 = document.querySelector('.tabs-item1-list');
+    let tab1Content = document.querySelector('.tab1-content');
+    let tab2Content = document.querySelector('.tab2-content');
+    let tab1header = document.querySelector('.tabs-item1');
+    let tab2header = document.querySelector('.tabs-item2');
+    tab2header.addEventListener('click', selectTabItem2);
+    tab1header.addEventListener('click', selectTabItem1);
     let menuItem = document.querySelectorAll('.menu__item');
 
     let dataAttr;
-    function selectTabItem1() {
-      tabContent1.classList.add('active');
-      tabItem1.classList.remove('active');
-      tab2.classList.remove('active');
-      tabContent2.classList.remove('active');
+    let tab2VisibleTimeout;
+
+    function selectTabItem1(e) {
+      e.stopPropagation();
+      tabItem1.classList.remove('anim-switch-tabs-up');
+      tab1Content.classList.remove('anim-fade-out');
+      tab2header.classList.remove('active');
+      tab1header.classList.add('active');
+
+      if (!tabItem1.classList.contains('anim-switch-tabs-down')) {
+        tabItem1.classList.add('anim-switch-tabs-down');
+      }
+      if (!tab1Content.classList.contains('anim-fade-in')) {
+        tab1Content.classList.add('anim-fade-in');
+      }
+      if (tab2VisibleTimeout){
+        clearTimeout(tab2VisibleTimeout);
+      }
+      tab2VisibleTimeout = setTimeout(() => {
+        tab2Content.classList.remove('tab2-visible');
+      }, 2000);
 
       menuItem.forEach((item) => {
         dataAttr = item.getAttribute('data-hidden');
         if (dataAttr === 'show') {
+          item.classList.remove('menu-show');
+          item.classList.add('menu-hide');
           item.classList.add('menu__item--hidden');
         }
         if (dataAttr === 'hidden') {
+          item.classList.remove('menu-hide');
+          item.classList.add('menu-show');
           item.classList.remove('menu__item--hidden');
         }
       });
 
     }
 
-    function selectTabItem2() {
-      console.log(tabContent1);
-      tab2.classList.add('active');
-      tabContent1.classList.remove('active');
-      tabContent1.classList.add('kostil');
+    function selectTabItem2(e) {
+      e.stopPropagation();
+      if (tab2VisibleTimeout){
+        clearTimeout(tab2VisibleTimeout);
+      }
+      tabItem1.classList.remove('anim-switch-tabs-down');
+      tab1Content.classList.remove('anim-fade-in');
+      tab2Content.classList.add('tab2-visible');
+      if (!tabItem1.classList.contains('anim-switch-tabs-up')) {
+        tabItem1.classList.add('anim-switch-tabs-up');
+      }
+      if (!tab1Content.classList.contains('anim-fade-out')) {
+        tab1Content.classList.add('anim-fade-out');
+      }
+      tab1header.classList.remove('active');
+      tab2header.classList.add('active');
 
-      tabItem1.classList.remove('active');
-      tabContent1.classList.add('active-1');
-      tabItem2.classList.add('active');
-      tabContent2.classList.add('active');
+
+
       menuItem.forEach((item) => {
         dataAttr = item.getAttribute('data-hidden');
         if (dataAttr === 'show') {
+          item.classList.remove('menu-hide');
           item.classList.remove('menu__item--hidden');
+          item.classList.add('menu-show');
         }
         if (dataAttr === 'hidden') {
+          item.classList.remove('menu-show');
+          item.classList.add('menu-hide');
           item.classList.add('menu__item--hidden');
         }
       });
@@ -63,8 +98,5 @@ window.onload = function () {
   };
   sandwichToggle();
 
-  setTimeout(() => {
-
-  })
 
 };
