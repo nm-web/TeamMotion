@@ -60,4 +60,16 @@ typings/
 # gitignore dist folder
 dist
 
+*.json
+webpack*
+LICENSE
+.eslintrc.js
+.pa11yci
+postcss.config.js
+CHANGELOG.md
+.travis.yml
+.stylelintrc.js
+push-dist.bat
+.gitignore
+
 .idea/
