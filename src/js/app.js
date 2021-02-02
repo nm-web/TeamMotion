@@ -219,11 +219,11 @@ window.onload = function () {
     });
   }
 
-  const mouseAnimation = function () {
-    gsap.to('.foot', {duration: 1, translateX: '10px', translateY: '-5px',repeat:5, yoyo:true});
-    gsap.to('.foot1', {duration: 1, translateX: '5px', translateY: '-7px',repeat:5, yoyo:true},"+=0.2");
-    // gsap.to('.whell', {duration: 2, rotate: '360deg', transformOrigin: 'center', translate:'5px'});
-  }
+  // const mouseAnimation = function () {
+  //   gsap.to('.foot', {duration: 1, translateX: '10px', translateY: '-5px',repeat:5, yoyo:true});
+  //   gsap.to('.foot1', {duration: 1, translateX: '5px', translateY: '-7px',repeat:5, yoyo:true},"+=0.2");
+  //   // gsap.to('.whell', {duration: 2, rotate: '360deg', transformOrigin: 'center', translate:'5px'});
+  // }
 
   // mouseAnimation();
 
