@@ -151,7 +151,7 @@
 
 .slider-button-next,
 .slider-button-prev {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border: 2px solid #EAE4E8;
   width: 45px;
   height: 45px;
@@ -161,7 +161,6 @@
   z-index: 5;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url("/static/images/svg/arrow-slider.svg");
   background-size: 35px 30px;
 }
 
