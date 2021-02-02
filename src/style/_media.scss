@@ -132,11 +132,10 @@
     width: 100%;
   }
 
-  //.model__arrow {
-  //  width: 30%;
-  //}
-
-
+  .catchy__content {
+    width: 95%;
+  }
+  
   .model__shema .model__card:nth-of-type(2n) > .model__arrow {
     display: none;
   }
@@ -223,9 +222,7 @@
     padding: 30px 5px;
   }
 
-  .catchy__content {
-    width: 95%;
-  }
+
 
   .catchy__form {
     margin: 0 auto;
