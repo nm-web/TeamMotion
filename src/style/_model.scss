@@ -1,0 +1,152 @@
+.model {
+  background: $white;
+  padding-bottom: 80px;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__image{
+    display: inline-block;
+  }
+
+  &__title {
+    position: relative;
+    font-size: 35px;
+    line-height: 0.95;
+    font-family: 'GothamPro-Bold', sans-serif;
+    margin-top: 46px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: calc(-100% - 20px);
+      left: 50%;
+      width: 1px;
+      height: 44px;
+      background-color: $green;
+    }
+  }
+
+  &__subtitle {
+    font-family: 'GothamPro-Light', sans-serif;
+    font-size: 35px;
+    line-height: 0.95;
+  }
+
+  &__shema {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__card {
+    max-width: 29%;
+    min-width: 310px;
+    min-height: 209px;
+    margin-top: 92px;
+  }
+}
+
+.line-top {
+  margin-right: 35%;
+  position: absolute;
+  top: 6px;
+  left: 15%;
+}
+
+.line-bottom {
+  position: absolute;
+  top: 52%;
+  left: 15%;
+}
+
+.line-bottom--mobile {
+  position: absolute;
+  left: 15%;
+  display: none;
+}
+
+.card {
+  border: 2px solid $paleGrey;
+  border-radius: 35px;
+  padding: 27px 35px 20px 30px;
+  position: relative;
+  transition: background-color 0.3s ease-out;
+  cursor: pointer;
+
+  &__icon {
+    max-width: 47px;
+
+    & img {
+      object-fit: cover;
+    }
+
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 0.96;
+    font-family: 'GothamPro-Bold', sans-serif;
+    margin-top: 23px;
+    text-align: left;
+
+    &--thick {
+      font-size: 35px;
+    }
+  }
+
+  &:hover {
+    background-color: $paleGrey;
+  }
+}
+
+.model__shema .model__card:nth-of-type(3)>.model__arrow {
+  display: none;
+}
+
+.model__arrow {
+  position: absolute;
+  left: 101%;
+  top: 50%;
+  width: 65px;
+  height: 1px;
+  background-color: $green;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    top: -2px;
+    right: -1px;
+    background-color: $green;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    top: 2px;
+    right: -1px;
+    background-color: $green;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    transform: rotate(-45deg);
+  }
+
+}
+
+.model__arrow--thick {
+  height: 2px;
+
+  &:before,
+  &:after {
+    height: 2px;
+
+  }
+}

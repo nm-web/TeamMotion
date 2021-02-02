@@ -1,0 +1,177 @@
+.services {
+  padding: 92px;
+  background-color: $darkGrey;
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+  }
+
+  &__title {
+    color: $white;
+    font-size: 41px;
+    text-align: left;
+    font-family: 'GothamPro-Bold', sans-serif;
+    margin-bottom: 50px;
+  }
+
+  &__strategic {
+    margin-top: 20px;
+    width: 50%;
+  }
+
+  &__list {
+    padding-left: 20px;
+    font-family: 'GothamPro-Light',sans-serif;
+    line-height: 0.94;
+    & li {
+      margin-bottom: 10px;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 8.5px;
+        height: 8.5px;
+        border-bottom: 3px solid $green;
+        border-right: 3px solid $green;
+        transform: rotate(-45deg);
+        left: -15px;
+        top: 4px;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    & svg {
+      position: absolute;
+    }
+  }
+}
+
+#circle1 {
+  top: 38%;
+  left:0;
+}
+
+#circle2 {
+  top: 0;
+  left: 28%;
+}
+
+#circle3 {
+  top: 13%;
+  left: 78%;
+}
+
+#circle4 {
+  top: 63%;
+  left: 78%;
+}
+
+#circle5 {
+  top: 73%;
+  left: 23%;
+}
+
+.accordion {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+
+  &__title {
+    position: relative;
+    transition: all 0.5s ease-out;
+    font-family: 'GothamPro-Light',sans-serif;
+    color:$white;
+    font-size: 25px;
+
+    & i {
+      position: absolute;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-bottom: 3px solid $green;
+      border-right: 3px solid $green;
+      transform: rotate(45deg);
+      left: -18px;
+      top: 4px;
+      transition: transform 0.5s ease-out;
+
+    }
+  }
+}
+
+.accordion__item.active {
+
+  & .accordion__title {
+    font-family: 'GothamPro-Bold', sans-serif;
+    color: $paleGrey;
+
+    & i {
+      transform: translateY(2px) rotate(225deg);
+      border-bottom: 3px solid $grey;
+      border-right: 3px solid $grey;
+
+    }
+  }
+
+
+
+}
+
+
+
+.accordion__content {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  z-index: 1;
+  left: -14px;
+  margin: 10px 0;
+  direction: rtl;
+  text-align: left;
+  overflow-y: scroll;
+  font-size: 18px;
+  line-height: 0.95;
+  transform: translateY(30px);
+  max-height: 0;
+  opacity: 0;
+  height: auto;
+  color: $white;
+
+}
+
+.accordion__content.before-anime {
+  max-height: 100%;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+//изменение скрол бара
+.accordion__content::-webkit-scrollbar {
+  width: 3px;
+  background: $grey;
+}
+
+.accordion__content::-webkit-scrollbar-thumb {
+  background: $darkGrey;
+  height: 20px;
+  width: 3px;
+  //border-radius: 10px;
+}
+
+.accordion__content::-webkit-scrollbar-track {
+
+  background: $grey;
+  //border-radius: 10px;
+  height: 90%;
+  margin-right: 1em;
+}
+

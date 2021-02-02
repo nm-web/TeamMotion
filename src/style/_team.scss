@@ -1,0 +1,50 @@
+.team {
+  margin: 78px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  &__content:first-child {
+   padding-top: 22px;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__text{
+    position: absolute;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 0.95;
+
+    & p:last-child {
+      margin-top: 6px;
+      background: $green;
+      width: max-content;
+      word-wrap: normal;
+    }
+
+  }
+
+  &__title {
+    font-size: 25px;
+    font-weight: 300;
+    background: $green;
+    color:$darkGrey;
+  }
+}
+
+.text-team {
+  top: 20px;
+  right: -123px;
+}
+
+.text-motion {
+  top: 118px;
+  left: -81px;
+  text-align: right;
+  & p:last-child {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,31 @@
+.sleep {
+  background: $paleGrey;
+  padding: 100px 0 100px 0;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    font-family: 'GothamPro-Light', sans-serif;
+    max-width: 555px;
+    font-size: 35px;
+    line-height: 0.96;
+    padding: 0 10px;
+
+    & em {
+      font-family: 'GothamPro-Bold', sans-serif;
+    }
+  }
+
+  &__image {
+    max-width: 488px;
+    padding: 10px;
+
+    //& svg path{
+    //  transform-origin: center center;
+    //}
+  }
+}
