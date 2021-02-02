@@ -53,6 +53,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "animejs": "^3.2.1",
     "file-loader": "^6.2.0",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1"

@@ -1,0 +1,39 @@
+.catchy {
+  background-color: $darkGrey;
+  background-image: url('/static/images/svg/envelope.svg');
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  background-size: contain;
+  padding: 100px 0;
+
+  &__content {
+    width: 43%;
+    & h3 {
+      color:$paleGrey;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    max-width: 441px;
+    padding: 10px;
+    margin-left: auto;
+
+    & input {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.btn-catchy {
+  background: linear-gradient(180deg, #00AB6D 0%, #008957 100%);
+  border: 1px solid #00AB6D;
+  box-sizing: border-box;
+  border-radius: 10px;
+  filter: drop-shadow(7px 7px 10px rgba(0, 0, 0, 0.25));
+  text-transform: uppercase;
+  font-size: 21px;
+  width: 221px;
+  font-family: 'GothamPro-Black',sans-serif;
+}

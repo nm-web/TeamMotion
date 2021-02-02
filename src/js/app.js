@@ -1,8 +1,58 @@
-window.onload = function () {
 
+window.onload = function () {
+  const animationMenuTab1 = function () {
+    let menuItem = document.querySelectorAll('.menu__item');
+    // let menuVisibleTimeout, menuHideTimeout;
+    // if (menuVisibleTimeout) {
+    //   clearTimeout(menuVisibleTimeout);
+    // }
+    // if (menuHideTimeout) {
+    //   clearTimeout(menuHideTimeout);
+    // }
+
+    menuItem.forEach((item) => {
+      dataAttr = item.getAttribute('data-hidden');
+      let action = gsap.timeline({paused:true})
+        .to('.menu__item--hidden', {duration: 1, opacity: '1', width: '100%',visibility:'visibility'});
+      let action1 = gsap.timeline({paused:true})
+        .to('.menu__item--show', {duration: 1, opacity: '0', width: '0',visibility:'hidden'});
+        // .to('.menu__item--hidden', {duration: 1, opacity: '1', width: '100%',visibility:'visibility'});
+      if (dataAttr === 'show') {
+        // item.classList.remove('menu-show');
+        // item.classList.add('menu-hide');
+        action1.play();
+      }
+      if (dataAttr === 'hidden') {
+        // item.classList.remove('menu-hide');
+        // item.classList.remove('menu__item--hidden');
+        action.play();
+      }
+    });
+  };
+
+  const animationMenuTab2 = function () {
+    let menuItem = document.querySelectorAll('.menu__item');
+    let menuVisibleTimeout, menuHideTimeout;
+    if (menuVisibleTimeout) {
+      clearTimeout(menuVisibleTimeout);
+    }
+    if (menuHideTimeout) {
+      clearTimeout(menuHideTimeout);
+    }
+    menuItem.forEach((item) => {
+      dataAttr = item.getAttribute('data-hidden');
+      if (dataAttr === 'show') {
+        // item.classList.remove('menu-hide');
+        // item.classList.add('menu-show');
+        // item.classList.remove('menu__item--hidden');
+      }
+      if (dataAttr === 'hidden') {
+        // item.classList.add('menu-hide');
+      }
+    });
+  };
 
   const tabs = function () {
-    // let tabItem1 = document.querySelector('.tabs-item1');
     let tabItem1 = document.querySelector('.tabs-item1-list');
     let tab1Content = document.querySelector('.tab1-content');
     let tab2Content = document.querySelector('.tab2-content');
@@ -28,32 +78,19 @@ window.onload = function () {
       if (!tab1Content.classList.contains('anim-fade-in')) {
         tab1Content.classList.add('anim-fade-in');
       }
-      if (tab2VisibleTimeout){
+      if (tab2VisibleTimeout) {
         clearTimeout(tab2VisibleTimeout);
       }
       tab2VisibleTimeout = setTimeout(() => {
         tab2Content.classList.remove('tab2-visible');
       }, 2000);
 
-      menuItem.forEach((item) => {
-        dataAttr = item.getAttribute('data-hidden');
-        if (dataAttr === 'show') {
-          item.classList.remove('menu-show');
-          item.classList.add('menu-hide');
-          item.classList.add('menu__item--hidden');
-        }
-        if (dataAttr === 'hidden') {
-          item.classList.remove('menu-hide');
-          item.classList.add('menu-show');
-          item.classList.remove('menu__item--hidden');
-        }
-      });
-
+      animationMenuTab1();
     }
 
     function selectTabItem2(e) {
       e.stopPropagation();
-      if (tab2VisibleTimeout){
+      if (tab2VisibleTimeout) {
         clearTimeout(tab2VisibleTimeout);
       }
       tabItem1.classList.remove('anim-switch-tabs-down');
@@ -68,24 +105,10 @@ window.onload = function () {
       tab1header.classList.remove('active');
       tab2header.classList.add('active');
 
-
-
-      menuItem.forEach((item) => {
-        dataAttr = item.getAttribute('data-hidden');
-        if (dataAttr === 'show') {
-          item.classList.remove('menu-hide');
-          item.classList.remove('menu__item--hidden');
-          item.classList.add('menu-show');
-        }
-        if (dataAttr === 'hidden') {
-          item.classList.remove('menu-show');
-          item.classList.add('menu-hide');
-          item.classList.add('menu__item--hidden');
-        }
-      });
+      animationMenuTab2();
     }
   };
-  tabs();
+
   const sandwichToggle = function () {
     let sandwichElements = document.querySelector('.mobile-menu');
     let menu = document.querySelector('.menu');
@@ -96,7 +119,162 @@ window.onload = function () {
       menu.classList.toggle('active');
     }
   };
-  sandwichToggle();
 
+  const animimationMission = function () {
+    let animEl1 = document.querySelector('#up');
+    let animEl2 = document.querySelector('#down');
+    let animEl3 = document.querySelector('#hidden');
+    let hoverEl = document.querySelector('.mission__content');
+
+    function animationElements() {
+      animEl1.classList.add('up-move');
+      animEl2.classList.add('down-move1');
+      animEl3.classList.add('hidden-hover');
+      setTimeout(() => {
+        animEl1.classList.remove('up-move');
+        animEl2.classList.remove('down-move1');
+        animEl3.classList.remove('hidden-hover');
+      }, 600);
+    }
+
+    hoverEl.addEventListener('mouseenter', () => {
+      animationElements();
+
+    });
+    hoverEl.addEventListener('mouseleave', () => {
+      animationElements();
+    });
+
+  };
+
+  const servicesAccordionAnimated = function () {
+    // const accordionTitle = document.querySelectorAll('.accordion__title');
+    const accordionItem = document.querySelectorAll('.accordion__item');
+
+    function removeActive() {
+      accordionItem.forEach((item) => {
+        if (item.classList.contains('active')) {
+          item.classList.remove('active');
+          const animeItem = item.querySelector('.accordion__content');
+          anime({
+            targets: animeItem,
+            'max-height': ['240px', '0'],
+            translateY: '30px',
+            opacity: ['1', '0'],
+            duration: 1500,
+            easing: 'easeInOutQuad'
+          });
+
+        }
+
+      });
+    }
+
+    function animeImage(animeCircleId) {
+      const circle1 = document.querySelector('#circle1');
+      const circle2 = document.querySelector('#circle2');
+      const circle3 = document.querySelector('#circle3');
+      const circle4 = document.querySelector('#circle4');
+      const circle5 = document.querySelector('#circle5');
+      let top, left, target;
+
+    }
+
+    accordionItem.forEach((item) => {
+      item.addEventListener('click', () => {
+        removeActive();
+        const animeItem = item.querySelector('.accordion__content');
+        const animeCircleId = item.getAttribute('data-circle');
+        const animeCircle = document.querySelector(animeCircleId);
+        const circles = document.querySelectorAll('.services__circle');
+        if (!item.classList.contains('active')) {
+          anime({
+            targets: animeItem,
+            'max-height': ['0', '240px'],
+            opacity: ['0', '1'],
+            duration: 2000,
+            translateY: '0',
+            easing: 'easeInOutQuad'
+          });
+          item.classList.add('active');
+        }
+
+        animeImage(animeCircleId);
+
+      });
+    });
+
+  };
+
+  const lineAnimationSectionStrenght = function () {
+    const line = document.querySelector('.strip');
+    let action = gsap.timeline({paused:true})
+      .to('.strip__top',{duration: 1, height: '100%'})
+      .to('.paragraph-line',{duration: 0.5, backgroundColor: '#00E190'}, "-=1");
+    line.addEventListener('mouseenter',() => {
+      action.play();
+    });
+    line.addEventListener('mouseleave',() => {
+      action.reverse();
+    });
+  }
+
+  const mouseAnimation = function () {
+    gsap.to('.foot', {duration: 1, translateX: '10px', translateY: '-5px',repeat:5, yoyo:true});
+    gsap.to('.foot1', {duration: 1, translateX: '5px', translateY: '-7px',repeat:5, yoyo:true},"+=0.2");
+    // gsap.to('.whell', {duration: 2, rotate: '360deg', transformOrigin: 'center', translate:'5px'});
+  }
+
+  // mouseAnimation();
+
+  // Аккордеон секции Формат работы
+  const formatAccordeon = function () {
+    const accordionList = document.querySelector('.list');
+    const accordionTitle = document.querySelectorAll('.list__title');
+    const accordionContent = document.querySelectorAll('.list__content');
+    accordionList.addEventListener('click', () => {
+      accordionTitle.forEach((title) => {
+          title.classList.toggle('list__title--active');
+        });
+      accordionContent.forEach((content) => {
+        content.classList.toggle('list__content--active');
+      });
+
+      })
+
+  }
+
+  // Слайдер Отзывы
+  let galleryThumbs = new Swiper('.reviews__slider-pagination', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+  let galleryTop = new Swiper('.reviews__slider', {
+    spaceBetween: 20,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    autoHeight: true,
+    navigation: {
+      nextEl: '.slider-button-next',
+      prevEl: '.slider-button-prev',
+    },
+    pagination: {
+      clickable: true,
+    },
+    thumbs: {
+      swiper: galleryThumbs
+    },
+
+  });
+
+  sandwichToggle();
+  tabs();
+  animimationMission();
+  lineAnimationSectionStrenght();
+  servicesAccordionAnimated();
+  formatAccordeon();
 
 };

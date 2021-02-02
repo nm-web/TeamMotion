@@ -1,0 +1,25 @@
+.work-format {
+  padding: 80px 0;
+  text-align: center;
+  background: #fff;
+
+  &__title {
+    font-family: 'GothamPro-Bold', sans-serif;
+    margin-bottom: 40px;
+  }
+
+  & .list__title{
+    cursor: pointer;
+  }
+
+  &__content-why,
+  &__content-result {
+    margin-top: 30px;
+    padding-right: 20px;
+    text-align: left;
+  }
+
+  &__content-result p {
+    font-size: 21px;
+  }
+}

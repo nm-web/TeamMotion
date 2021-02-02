@@ -1,32 +1,178 @@
-@media screen and (max-width: 996px) {
-  .input-group {
+@media screen and (max-width: 1334px) {
+  .slider-button-next {
+    left: 76%;
+  }
+
+  .slider-button-prev {
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .model__arrow {
+    width: 20px;
+  }
+
+  .slider-button-next {
+    left: 81%;
+  }
+
+  .slider-button-prev {
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 1018px) {
+  .line-bottom--mobile {
+    width: 65%;
+    display: block;
+    top: 70%;
+  }
+
+
+  .line-bottom {
+    width: 65%;
+    top: 35%;
+  }
+}
+
+@media screen and (max-width: 968px) {
+
+  .logo--big {
+    display: none;
+  }
+
+  .text-team {
+    top: -40px;
+    right: 0;
+    left: 0;
+  }
+
+  .text-motion {
+    top: 100%;
+    left: 0;
+  }
+
+  .wake__content,
+  .sleep__content,
+  .mission {
+    flex-wrap: wrap;
     justify-content: center;
   }
+
+  .mission__content {
+    position: static;
+    transform: translateY(0);
+    width: 100%;
+  }
+
+  .mission__image svg {
+    height: 300px;
+  }
+
+  .sleep__text {
+    order: 1;
+  }
+
+  .sleep__image {
+    order: 2;
+  }
+
+  .sleep__text,
+  .wake__text {
+    max-width: 100%;
+  }
+
+  .services__content {
+    //flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .services__strategic {
+    width: 100%;
+  }
+
+  .services__image {
+    display: none;
+  }
+
+  .slider-button-next {
+    left: 90%;
+  }
+
+  .slider-button-prev {
+    left: 5%;
+  }
+
+  .rectangle-small {
+    display: none;
+  }
+
+  //.header__content {
+  //  flex-wrap: wrap;
+  //  justify-content: center;
+  //}
+
+  .header__questions,
+  .header__motivation {
+    width: 95%;
+  }
+
+  .header-form {
+    margin: 0 auto;
+  }
+
+  .input-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .header-form__input {
     max-width: 100%;
     width: 100%;
   }
+
+  //.model__arrow {
+  //  width: 30%;
+  //}
+
+
+  .model__shema .model__card:nth-of-type(2n) > .model__arrow {
+    display: none;
+  }
+
+  .model__arrow {
+    width: 70%;
+  }
+
+
+  .model__shema .model__card:nth-of-type(3) > .model__arrow {
+    display: block;
+  }
+
+
 }
 
-
 @media screen and (max-width: 768px) {
+
   .logo--small {
     margin-right: 0;
-  }
-  .logo--big {
-    display: none;
   }
   .mobile-menu {
     display: block;
 
   }
+
   .menu {
     display: none;
+
     &__item {
       text-align: center;
+
       &.menu__item--hidden {
         height: 0;
-        margin-bottom: 0!important;
+        margin-bottom: 0 !important;
+
         & .menu__link {
           height: 0;
         }
@@ -34,10 +180,10 @@
     }
   }
 
-
   .header {
     margin-top: 60px;
   }
+
   .header__menu {
     background: $darkGrey;
     position: fixed;
@@ -47,22 +193,121 @@
     padding: 20px 10px;
     width: 100%;
   }
+
   .rectangle-small {
     display: none;
   }
-  .header__motivation, .header__questions {
+
+  .header__motivation,
+  .header__questions {
     width: 100%;
   }
 
   .header-form {
     max-width: 100%;
   }
+
   .experience-inner {
     justify-content: center;
   }
+
   .experience-column {
     width: 100%;
   }
 
+  .model__arrow {
+    width: 20px;
+  }
 
+  .services {
+    padding: 30px 5px;
+  }
+
+  .catchy__content {
+    width: 95%;
+  }
+
+  .catchy__form {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .model__card {
+    margin-top: 30px;
+  }
+
+  .line-top {
+    width: 50%;
+    top: -22px;
+  }
+
+  .line-bottom {
+    width: 50%;
+    top: 33%;
+  }
+
+  .line-bottom--mobile {
+    width: 50%;
+    top: 67%;
+  }
+
+  .list__content {
+    flex-wrap: wrap;
+  }
+
+  .reviews__slider .swiper-slide {
+    width: 85% !important;
+  }
+
+  .slider-button-next,
+  .slider-button-prev {
+    display: none;
+  }
+
+  .reviews-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .reviews__title::after {
+    width: 0;
+  }
+
+  .reviews__slider .swiper-slide {
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 657px) {
+
+  .input-name,.input-phone {
+    max-width: 100%;
+  }
+
+  .model__shema {
+    justify-content: center;
+  }
+
+  .line-top,
+  .line-bottom,
+  .line-bottom--mobile {
+    display: none;
+  }
+
+  .model__arrow {
+    top: 105%;
+    left: 50%;
+    transform: rotate(90deg);
+  }
+
+}
+
+@media screen and (max-width: 440px) {
+  h3,h2 {
+    font-size: 30px;
+  }
+
+  .header-form__btn {
+    width: 228px;
+  }
 }
