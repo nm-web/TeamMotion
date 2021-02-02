@@ -136,6 +136,9 @@
     width: 95%;
   }
   
+  .catchy__form {
+    margin: 0 auto;
+  }
   .model__shema .model__card:nth-of-type(2n) > .model__arrow {
     display: none;
   }
@@ -223,10 +226,6 @@
   }
 
 
-
-  .catchy__form {
-    margin: 0 auto;
-  }
 }
 
 @media screen and (max-width: 667px) {
