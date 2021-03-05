@@ -2,29 +2,19 @@
 window.onload = function () {
   const animationMenuTab1 = function () {
     let menuItem = document.querySelectorAll('.menu__item');
-    // let menuVisibleTimeout, menuHideTimeout;
-    // if (menuVisibleTimeout) {
-    //   clearTimeout(menuVisibleTimeout);
-    // }
-    // if (menuHideTimeout) {
-    //   clearTimeout(menuHideTimeout);
-    // }
-
     menuItem.forEach((item) => {
       dataAttr = item.getAttribute('data-hidden');
       let action = gsap.timeline({paused:true})
-        .to('.menu__item--hidden', {duration: 1, opacity: '1', width: '100%',visibility:'visibility'});
+        .to('.menu__item--hidden', {duration: 1, opacity: '0', width: '0',visibility:'hidden', marginLeft: '0'})
+        .to('.menu__item--hidden', {duration: 0.8, display: 'none'});
       let action1 = gsap.timeline({paused:true})
-        .to('.menu__item--show', {duration: 1, opacity: '0', width: '0',visibility:'hidden'});
-        // .to('.menu__item--hidden', {duration: 1, opacity: '1', width: '100%',visibility:'visibility'});
+        .to('.menu__item--show', {duration: 1, display: 'block'})
+        .to('.menu__item--show', {duration: 1, opacity: '1', width: 'auto',visibility:'visible'})
+
       if (dataAttr === 'show') {
-        // item.classList.remove('menu-show');
-        // item.classList.add('menu-hide');
         action1.play();
       }
       if (dataAttr === 'hidden') {
-        // item.classList.remove('menu-hide');
-        // item.classList.remove('menu__item--hidden');
         action.play();
       }
     });
@@ -32,22 +22,19 @@ window.onload = function () {
 
   const animationMenuTab2 = function () {
     let menuItem = document.querySelectorAll('.menu__item');
-    let menuVisibleTimeout, menuHideTimeout;
-    if (menuVisibleTimeout) {
-      clearTimeout(menuVisibleTimeout);
-    }
-    if (menuHideTimeout) {
-      clearTimeout(menuHideTimeout);
-    }
+    let action = gsap.timeline({paused:true})
+      .to('.menu__item--show', {duration: 1, opacity: '0', width: '0',visibility:'hidden', marginLeft: '0'})
+      .to('.menu__item--show', {duration: 0.8, display: 'none'});
+    let action1 = gsap.timeline({paused:true})
+      .to('.menu__item--hidden', {duration: 1, display: 'block'})
+      .to('.menu__item--hidden', {duration: 1, opacity: '1', width: 'auto',visibility:'visible'});
     menuItem.forEach((item) => {
       dataAttr = item.getAttribute('data-hidden');
       if (dataAttr === 'show') {
-        // item.classList.remove('menu-hide');
-        // item.classList.add('menu-show');
-        // item.classList.remove('menu__item--hidden');
+        action1.play();
       }
       if (dataAttr === 'hidden') {
-        // item.classList.add('menu-hide');
+        action.play();
       }
     });
   };
@@ -60,9 +47,6 @@ window.onload = function () {
     let tab2header = document.querySelector('.tabs-item2');
     tab2header.addEventListener('click', selectTabItem2);
     tab1header.addEventListener('click', selectTabItem1);
-    let menuItem = document.querySelectorAll('.menu__item');
-
-    let dataAttr;
     let tab2VisibleTimeout;
 
     function selectTabItem1(e) {
@@ -148,7 +132,6 @@ window.onload = function () {
   };
 
   const servicesAccordionAnimated = function () {
-    // const accordionTitle = document.querySelectorAll('.accordion__title');
     const accordionItem = document.querySelectorAll('.accordion__item');
 
     function removeActive() {
@@ -219,13 +202,6 @@ window.onload = function () {
     });
   }
 
-  // const mouseAnimation = function () {
-  //   gsap.to('.foot', {duration: 1, translateX: '10px', translateY: '-5px',repeat:5, yoyo:true});
-  //   gsap.to('.foot1', {duration: 1, translateX: '5px', translateY: '-7px',repeat:5, yoyo:true},"+=0.2");
-  //   // gsap.to('.whell', {duration: 2, rotate: '360deg', transformOrigin: 'center', translate:'5px'});
-  // }
-
-  // mouseAnimation();
 
   // Аккордеон секции Формат работы
   const formatAccordeon = function () {

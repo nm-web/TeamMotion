@@ -1,34 +1,30 @@
 
 .header {
-
   background-color: $darkGrey;
   background-repeat: no-repeat;
-  background-position: -128px 0px;
+  background-position: -8rem 0;
   background-size: contain;
   position: relative;
   margin: 0 auto;
-  padding-bottom: 150px;
+  padding-bottom: 9.375rem;
 
   &__menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 41px;
-    padding-bottom: 53px;
-    //overflow: hidden;
-
+    padding-top: 2.56rem;
+    padding-bottom: 3.31rem;
   }
 
 }
 
 .rectangle {
   position: absolute;
-  left: -148px;
+  left: -9.25rem;
   top: 0;
-  height: calc(100% - 66px);
-  width: 149px;
+  height: calc(100% - 4.125rem);
+  width: 9.31rem;
   border: none;
-  //transform: translateX(-99%);
   background-color: $darkGrey;
 }
 
@@ -36,35 +32,32 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 93px;
-  height: 19px;
+  width: 5.81rem;
+  height: 1.18rem;
   background: $white;
   border: none;
 }
-
 
 .logo--small {
   margin-right: 9%;
 }
 
-
 .logo--big {
-  margin-bottom: 25px;
+  margin-bottom: 1.56rem;
 }
 
 .header__content {
   display: flex;
-  //justify-content: space-between;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .header__title {
   color: $paleGrey;
-  font-size: 41px;
+  font-size: 2.56rem;
   line-height: 1;
   font-family: 'GothamPro-Bold', sans-serif;
-  margin-bottom: 38px;
+  margin-bottom: 0.93em;
 }
 
 .header-form {
@@ -72,22 +65,22 @@
   border: 1px solid #FFFFFF;
   border-radius: 25px;
   text-align: center;
-  padding: 30px 34px 41px 34px;
-  max-width: 555px;
+  padding: 1.875rem 2.125rem 2.56rem 2.125rem;
+  max-width: 34.68rem;
   position: relative;
 
   &__title {
-    font-size: 25px;
+    font-size: 1.56rem;
     line-height: 1.24;
-    margin-bottom: 17px;
+    margin-bottom: 0.68em;
     font-family: 'GothamPro-Light', sans-serif;
     font-weight: 400;
   }
 
   &__btn {
-    font-size: 21px;
+    font-size: 1.31rem;
     line-height: 0.95;
-    width: 301px;
+    width: 14.33em;
   }
 
   &::before {
@@ -103,7 +96,7 @@
 
   &__input {
     font-family: 'Montserrat', sans-serif;
-    height: 40px;
+    height: 2.5rem;
     background: $white;
     text-align: center;
     color: $grey;
@@ -111,8 +104,8 @@
   }
 
   &__link {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 0.875rem;
+    line-height: 1.2;
     color: $grey;
     text-decoration: underline;
   }
@@ -129,7 +122,7 @@
     & + label {
       color: $paleGrey;
       display: inline-block;
-      margin: 18px auto 18px 30px;
+      margin: 1.125rem auto 1.125rem 1.875rem;
       position: relative;
 
       &:before {
@@ -148,7 +141,7 @@
 
   & span {
     font-family: 'Montserrat', sans-serif;
-    color:$paleGrey;
+    color: $paleGrey;
   }
 }
 
@@ -163,13 +156,13 @@
 }
 
 .input-name {
-  margin-bottom: 17px;
-  max-width: 222px;
+  margin-bottom: 1.06rem;
+  max-width: 13.875rem;
 }
 
 .input-phone {
   margin-bottom: 17px;
-  max-width: 228px;
+  max-width: 14.25rem;
 }
 
 .input-email {
@@ -177,19 +170,19 @@
 }
 
 .header__motivation {
-  flex:1;
+  flex: 1;
   padding: 10px;
 }
 
 .header__questions {
   padding: 10px 10px 10px 76px;
   //width: 49%;
-  flex:1;
+  flex: 1;
 }
 
 .header-tabs {
   font-weight: 900;
-  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 1.1;
   color: $white;
 
@@ -211,7 +204,7 @@
     }
 
     & h3 {
-      font-family: 'GothamPro-Black',sans-serif;
+      font-family: 'GothamPro-Black', sans-serif;
       font-size: 28px;
       line-height: 1.1;
       //font-weight: 900;
@@ -228,7 +221,6 @@
 
       &:before {
         content: url("data:image/svg+xml,%3Csvg width='44' height='56' viewBox='0 0 44 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.8726 13.288C26.8726 10.8245 28.8705 8.8266 31.334 8.8266C33.7974 8.8266 35.7954 10.8245 35.7954 13.288V18.1796C35.7954 20.6431 33.7974 22.641 31.334 22.641' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M10.8186 54.3128C13.8597 56.352 17.9616 55.6978 20.2011 52.81C23.3423 48.7611 26.4895 45.3547 28.7939 43.6868C29.9431 42.8558 32.2769 41.076 33.7739 40.74' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M22.8827 28.4697C25.906 24.692 28.6171 21.8513 31.1513 19.3878C34.2336 16.3939 31.9469 13.7889 30.279 13.288C20.5488 19.1933 8.40227 30.5914 1 47.7298' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M20.1304 29.0119C22.2933 28.4285 25.3697 28.0984 27.8686 28.1809C30.3674 28.2634 32.6718 28.7821 33.2965 33.3613' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M25.0397 33.5028C28.7821 32.9193 34.8288 30.9214 35.7895 37.534' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M29.283 37.4161C32.6128 36.9151 36.8562 36.5026 37.6046 39.6615C38.3531 42.8204 36.8149 44.0463 34.3161 44.7948C31.8231 45.5432 29.5541 45.3016 28.7938 43.6868' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M16.5707 24.3737C15.9754 21.4446 13.9775 18.6983 11.7321 19.7827C11.2311 24.6095 10.518 28.8469 8.04865 34.8819' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M35.7895 8.86785L40.0564 4.6363' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M37.6106 13.3175L43.5041 12.1388' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M37.5988 18.3093L43.51 19.3642' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M31.3575 7.0055L31.3811 1' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M35.7895 22.6057L40.0564 26.8372' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M26.9079 8.8266L22.6764 4.56558' stroke='%23737479' stroke-miterlimit='10'/%3E%3Cpath d='M25.0456 13.2644L19.0401 13.2408' stroke='%23737479' stroke-miterlimit='10'/%3E%3C/svg%3E%0A");
-
       }
 
     }
